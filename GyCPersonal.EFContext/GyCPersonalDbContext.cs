@@ -23,5 +23,20 @@ namespace GyCPersonal.EFContext
         public DbSet<DetalleCompra> DetallesCompras { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+                       
+            modelBuilder.Configurations.Add(new ProductoConfiguration());
+            modelBuilder.Configurations.Add(new ProveedorConfiguration());
+            modelBuilder.Configurations.Add(new CategoriaConfiguration());
+            modelBuilder.Configurations.Add(new CompraConfiguration());
+            modelBuilder.Configurations.Add(new DetalleComprasConfiguration());
+           
+            modelBuilder.Entity<Producto>().ToTable("Productos");
+            modelBuilder.Entity<Proveedor>().ToTable("Proveedores");
+
+            base.OnModelCreating(modelBuilder);
+        }
+
     }
 }

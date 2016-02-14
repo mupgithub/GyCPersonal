@@ -7,12 +7,16 @@
 <h2>Index</h2>
 
 <p>
+
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.compra.observaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.producto.codProducto)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.producto.descripcion)
@@ -28,6 +32,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.compra.observaciones)
         </td>
+        <th>
+            @Html.DisplayFor(model => item.producto.codProducto)
+        </th>
         <td>
             @Html.DisplayFor(modelItem => item.producto.descripcion)
         </td>

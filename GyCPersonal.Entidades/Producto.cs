@@ -11,7 +11,10 @@ namespace GyCPersonal.Entidades
     {
         public int id { get; set; }
 
-        [Display(Name = "Producto")]
+        [Display(Name = "Codigo")]
+        public string codProducto { get; set; }
+
+        [Display(Name = "Descripcion")]
         public string descripcion { get; set; }
 
         [Display(Name = "Ultimo Precio de Costo")]
